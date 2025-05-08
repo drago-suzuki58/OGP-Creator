@@ -30,7 +30,7 @@
     {% endif %}
 
     {% if og_description %}
-        <p>{{ og_description }}</p>
+        <p>{{ og_description | replace('\n', '<br>') | safe }}</p>
     {% else %}
         <p class="no-description">No Description Provided</p>
     {% endif %}
