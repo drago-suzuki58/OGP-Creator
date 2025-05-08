@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./data/ogp.db")
-RESERVED_PATHS = os.getenv("RESERVED_PATHS", "").split(",") or ["admin", "api", "dashboard", "404", "403", ""]
+RESERVED_PATHS = os.getenv("RESERVED_PATHS", "").split(",") or ["api", "statics", "assets", ""]
 
 YEAR = os.getenv("YEAR", "2025")
 CREATER_NAME = os.getenv("CREATER_NAME", "drago-suzuki58")

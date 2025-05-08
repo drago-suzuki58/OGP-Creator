@@ -101,3 +101,31 @@ footer p {
     font-size: 1.2em;
     text-align: center;
 }
+
+#floating-button {
+    position: fixed;
+    bottom: 120px; /* ボタンを少し上に移動 */
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 1000;
+    text-align: center;
+    white-space: nowrap;
+    max-width: 200px;
+    overflow: hidden;
+}
+
+#floating-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.01);
+}
+
+#floating-button:active {
+    transform: scale(0.95);
+}

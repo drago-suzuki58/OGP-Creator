@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGP Creator - Create OGP</title>
+    <link rel="stylesheet" href="/statics/index.css">
+    <link rel="icon" href="/statics/favicon.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>OGP Creator</h1>
+        <p>Create your OGP metadata easily!</p>
+    </header>
+    <main>
+        <form id="ogp-form">
+            <div class="form-group">
+                <label for="path">Path (Optional):</label>
+                <input type="text" id="path" name="path" placeholder="example-path">
+            </div>
+            <div class="form-group">
+                <label for="og_title">OG Title (Optional):</label>
+                <input type="text" id="og_title" name="og_title" placeholder="Enter the title">
+            </div>
+            <div class="form-group">
+                <label for="og_description">OG Description (Optional):</label>
+                <textarea id="og_description" name="og_description" placeholder="Enter the description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="og_image">OG Image URL (Optional):</label>
+                <input type="url" id="og_image" name="og_image" placeholder="https://example.com/image.png">
+            </div>
+            <div class="form-group">
+                <label for="og_url">OG URL (Optional):</label>
+                <input type="url" id="og_url" name="og_url" placeholder="https://example.com">
+            </div>
+            <button type="submit">Create OGP</button>
+        </form>
+        <div id="response-message"></div>
+    </main>
+    <footer>
+        <p>&copy; {{ year }} OGP Creator. Licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.</p>
+        <p>Created by <strong>{{ creator_name }}</strong>. Check out the project on <a href="{{ github_link }}" target="_blank">GitHub</a>.</p>
+    </footer>
+    <script src="/statics/index.js"></script>
+</body>
+</html>

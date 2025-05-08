@@ -15,8 +15,13 @@ root_router = APIRouter(prefix="", tags=["Root"])
 templates = Jinja2Templates(directory="templates")
 
 @root_router.get("/")
-async def get_root_template():
-    return {"message": "Hello World!"}
+async def get_root_template(request: Request):
+    return templates.TemplateResponse("index.html", {
+        "request": request,
+        "year": env.YEAR,
+        "creator_name": env.CREATER_NAME,
+        "github_link": env.GITHUB_LINK
+    })
 
 @root_router.get("/{path}", response_class=HTMLResponse)
 async def get_ogp_template(path: str, request: Request):

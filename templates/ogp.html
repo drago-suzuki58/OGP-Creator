@@ -9,6 +9,7 @@
     <meta property="og:url" content="{{ og_url if og_url else '' }}">
     <title>{{ og_title if og_title else 'No Title Provided' }} | OGP Creator</title>
     <link rel="stylesheet" href="/statics/ogp.css">
+    <link rel="icon" href="/statics/favicon.svg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
@@ -39,5 +40,7 @@
         <p>&copy; {{ year }} OGP Creator. Licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.</p>
         <p>Created by <strong>{{ creator_name }}</strong>. Check out the project on <a href="{{ github_link }}" target="_blank">GitHub</a>.</p>
     </footer>
+
+    <a href="/" id="floating-button">Create a Custom OGP?</a>
 </body>
 </html>
