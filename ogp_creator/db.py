@@ -3,6 +3,7 @@ import os
 
 import ogp_creator.env as env
 
+
 engine = create_engine(env.DATABASE_URL, echo=True)
 
 def init_db():

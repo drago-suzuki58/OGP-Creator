@@ -17,6 +17,8 @@ app = FastAPI(lifespan=lifespan)
 app.mount("/statics", StaticFiles(directory="statics"), name="statics")
 templates = Jinja2Templates(directory="templates")
 
+app.include_router(routers.api_router)
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
