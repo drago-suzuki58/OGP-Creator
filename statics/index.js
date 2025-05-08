@@ -1,4 +1,6 @@
 document.getElementById('ogp-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
     const formData = {};
     const fields = ['path', 'og_title', 'og_description', 'og_image', 'og_url'];
 
