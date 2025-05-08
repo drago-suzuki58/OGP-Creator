@@ -4,6 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
 
 import ogp_creator.db as db
+import ogp_creator.env as env
 import ogp_creator.routers as routers
 
 @asynccontextmanager
@@ -23,4 +24,4 @@ app.include_router(routers.root_router)
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host=env.IP, port=int(env.PORT), reload=True)
