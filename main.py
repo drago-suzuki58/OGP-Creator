@@ -12,29 +12,32 @@ import ogp_creator.routers as routers
 
 os.makedirs("logs", exist_ok=True)
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s\t: %(name)s\t: %(levelname)s\t: %(message)s",
-    handlers=[
-        TimedRotatingFileHandler(
-            "logs/app.log",
-            when="midnight",
-            interval=1,
-            backupCount=30
-        ),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger(__name__)
+if env.RELOAD is False:
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s\t: %(name)s\t: %(levelname)s\t: %(message)s",
+        handlers=[
+            TimedRotatingFileHandler(
+                "logs/app.log",
+                when="midnight",
+                interval=1,
+                backupCount=30
+            ),
+            logging.StreamHandler()
+        ]
+    )
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     db.init_db()
-    logger.info("Database initialized.")
     yield
-    logger.info("Application shutdown.")
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(
+    lifespan=lifespan,
+    docs_url=None,
+    redoc_url=None,
+    openapi_url=None
+    )
 
 app.mount("/statics", StaticFiles(directory="statics"), name="statics")
 app.mount("/assets", StaticFiles(directory="assets"), name="assets")
@@ -46,11 +49,10 @@ app.include_router(routers.api_router)
 
 if __name__ == "__main__":
     import uvicorn
-    logger.info("Starting application...")
     uvicorn.run(
         "main:app",
         host=env.IP,
-        port=int(env.PORT),
-        reload=True,
+        port=env.PORT,
+        reload=env.RELOAD,
         reload_excludes=["logs/"]
     )
