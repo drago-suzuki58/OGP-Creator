@@ -22,7 +22,7 @@ cd OGP-Creator
 2. 依存関係のインストール
 
 ```bash
-pip install -r requirements.txt
+pip install .
 ```
 
 3. 環境変数の設定

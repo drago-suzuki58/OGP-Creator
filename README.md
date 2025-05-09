@@ -22,7 +22,7 @@ cd OGP-Creator
 2. Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip install .
 ```
 
 3. Configure environment variables:
