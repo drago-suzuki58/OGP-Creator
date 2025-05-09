@@ -2,12 +2,15 @@ from fastapi import FastAPI
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
+import os
 import logging
 from logging.handlers import TimedRotatingFileHandler
 
 import ogp_creator.db as db
 import ogp_creator.env as env
 import ogp_creator.routers as routers
+
+os.makedirs("logs", exist_ok=True)
 
 logging.basicConfig(
     level=logging.INFO,
