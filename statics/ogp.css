@@ -104,7 +104,7 @@ footer p {
 
 #floating-button {
     position: fixed;
-    bottom: 120px; /* ボタンを少し上に移動 */
+    bottom: 120px;
     right: 20px;
     background-color: #007bff;
     color: #fff;

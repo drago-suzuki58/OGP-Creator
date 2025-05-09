@@ -134,7 +134,6 @@ footer p {
     margin: 5px 0;
 }
 
-/* メッセージ表示エリアのスタイル */
 #response-message {
     margin-top: 20px;
     font-size: 1.2em;
@@ -147,28 +146,25 @@ footer p {
     margin-right: auto;
 }
 
-/* 成功メッセージのスタイル */
 #response-message.success {
-    background-color: #e6ffed; /* 薄い緑色 */
-    color: #2d7a46; /* 成功メッセージ用の濃い緑色 */
+    background-color: #e6ffed;
+    color: #2d7a46;
     border: 1px solid #2d7a46;
 }
 
-/* エラーメッセージのスタイル */
 #response-message.error {
-    background-color: #ffe6e6; /* 薄い赤色 */
-    color: #a12d2d; /* エラーメッセージ用の濃い赤色 */
+    background-color: #ffe6e6;
+    color: #a12d2d;
     border: 1px solid #a12d2d;
 }
 
-/* コピー用ボタンのスタイル */
 #copy-path {
     display: inline-block;
     padding: 8px 12px;
     font-size: 1em;
     font-weight: bold;
     color: #fff;
-    background-color: #007bff; /* 青色 */
+    background-color: #007bff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -176,12 +172,10 @@ footer p {
     margin-left: 10px;
 }
 
-/* コピー用ボタンのホバー時のスタイル */
 #copy-path:hover {
-    background-color: #0056b3; /* 濃い青色 */
+    background-color: #0056b3;
 }
 
-/* コピー用ボタンのフォーカス時のスタイル */
 #copy-path:focus {
     outline: 2px solid #0056b3;
     outline-offset: 2px;
