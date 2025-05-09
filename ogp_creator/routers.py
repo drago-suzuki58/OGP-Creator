@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, Query
 from fastapi.templating import Jinja2Templates
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, FileResponse
 from fastapi import Request
 from sqlalchemy.exc import IntegrityError
 from sqlmodel import select
@@ -9,6 +9,13 @@ from ogp_creator.db import get_session
 import ogp_creator.env as env
 import ogp_creator.models as models
 import ogp_creator.schemas as schemas
+
+
+meta_router = APIRouter(prefix="", tags=["Meta"])
+
+@meta_router.get("/robots.txt", response_class=FileResponse)
+async def get_robots_txt():
+    return FileResponse("statics/robots.txt")
 
 
 root_router = APIRouter(prefix="", tags=["Root"])

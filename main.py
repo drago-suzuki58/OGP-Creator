@@ -19,8 +19,9 @@ app.mount("/statics", StaticFiles(directory="statics"), name="statics")
 app.mount("/assets", StaticFiles(directory="assets"), name="assets")
 templates = Jinja2Templates(directory="templates")
 
-app.include_router(routers.api_router)
+app.include_router(routers.meta_router)
 app.include_router(routers.root_router)
+app.include_router(routers.api_router)
 
 if __name__ == "__main__":
     import uvicorn
